@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="navBarAll">
+        <div id="navBarLeft">
+            <h1>Crypto Aggregat<img id="centGif" src="static/resources/bCent.webp" alt="cryptoCoin">r</h1>
+        </div>
+        <div id="navBarRight">
+            <p>View Crypto News </p>
+            <p>ALL</p>
+            <p>In One Place</p>
+        </div>
+    </div>
+    <div id="splashBox">
+        <div id="splashBoxLeft">
+            <h4>{{session['username']}}</h4>
+            <a id="userLogout" href="/user/logout">
+                Logout
+            </a>
+        </div>
+        <div id="splashBoxRight">
+            <h3>Recent Comments</h3>
+            <div overflow="auto">
+                {% for comment in list_comments: %}
+                <div>{{comment.content}}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+}
+#navBarAll{
+    display: flex;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    justify-content:space-evenly;
+    align-items: center;
+    color: white;
+    background-color: black;
+    border-bottom: 3px solid white;
+    height: 180px;
+}
+
+#navBarLeft{
+    text-shadow: 3px 3px 3px darkmagenta;
+    /* animation: color-change 7s infinite; */
+}
+
+/* Creating the animation effect of Crypto Comments */
+/* @keyframes color-change {
+    5% { color: 	darkgrey; }
+    10% { color: 	darkgrey; }
+    20% { color: lightgrey; }
+    30% { color: darkgrey; }
+    40% { color: lightgrey; }
+    50% { color: darkgrey; }
+    60% { color: lightgrey; }
+    70% { color: darkgrey; }
+    80% { color: lightgrey; }
+    90% { color: darkgrey; }
+    100% { color: darkgrey; }
+} */
+
+#navBarRight{
+    font-size: 2rem;
+    text-align: center;
+}
+
+
+
+#splashBox{
+    margin-top: 60px;
+    display: flex;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 3px 3px 3px darkmagenta;
+    font-size: 2rem;
+    color: white;
+}
+
+#splashBoxLeft{
+    flex: 1;
+    border: 2px solid white;
+    border-bottom: none;
+    border-left: none;
+}
+
+#splashBoxLeft > h4, #splashBoxRight > h4{
+    margin-bottom: 25px;
+    font-size: 5rem;
+} 
+
+#splashBoxRight{
+    flex: 1;
+    border: 2px solid white;
+    border-right: none;
+    border-bottom: none;
+}
+
+
+#registerForm, #loginForm{
+    text-align:center;
+}
+
+#usernameBox, #emailBox, #passwordBox, #pwConfirmBox, #pwLoginBox, #emailLoginBox{
+    margin-bottom: 30px;
+    width: 250px;
+    height: 25px;
+}
+#regButton, #loginButton{
+    font-family: 'Orbitron', sans-serif;
+
+}
+
+#centGif{
+    padding-top: 30px;
+    height: 130px;
+}
+
+#alertMessage{
+    color: red;
+    font-size: 1rem;
+}
+
+#userLogout{
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+}
+

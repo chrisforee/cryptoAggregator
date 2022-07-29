@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CC Login/Register</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="navBarAll">
+        <div id="navBarLeft">
+            <h1>Crypto Aggregat<img id="centGif" src="static/resources/bCent.webp" alt="cryptoCoin">r</h1>
+        </div>
+        <div id="navBarRight">
+            <p>View Crypto News </p>
+            <p>ALL</p>
+            <p>In One Place</p>
+        </div>
+    </div>
+    <div id="splashBox">
+        <div id="splashBoxLeft">
+            <h4>Register</h4>
+            <form id="registerForm" method="POST" action="/user/registration">
+                <div>
+                    <label>
+                        Username
+                    </label>
+                    <div>
+                        <input id="usernameBox" type="text" name="username"/>
+                        {% for message in get_flashed_messages(category_filter = ['error_registration_username']) %}
+                        <div id="alertMessage">
+                            {{message}}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div>
+                    <label>
+                        Email
+                    </label>
+                    <div>
+                        <input id="emailBox" type="text" name="email" class="form-control"/> 
+                        {% for message in get_flashed_messages(category_filter = ['error_registration_email']) %}
+                        <div id="alertMessage">
+                            {{message}}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div>
+                    <label>
+                        Password
+                    </label>
+                    <div>
+                        <input id="passwordBox" type="password" name="password"/>
+                        {% for message in get_flashed_messages(category_filter = ['error_registration_password']) %}
+                        <div>
+                            {{message}}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div>
+                    <label>
+                        Password confirmation
+                    </label>
+                    <div>
+                        <input id="pwConfirmBox"type="password" name="password_confirmation"/>
+                        {% for message in get_flashed_messages(category_filter = ['error_registration_password_confirmation']) %}
+                        <div id="alertMessage">
+                            {{message}}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button id="regButton">Submit</button>
+            </form>
+        </div>
+        <div id="splashBoxRight">
+            <h4>Login</h4>
+            <form id="loginForm" method="POST" action="/user/login">
+                <div>
+                    <label>
+                        Email
+                    </label>
+                    <div>
+                        <input id="emailLoginBox" type="text" name="email"/> 
+                    </div>
+                </div>
+                <div>
+                    <label>
+                        Password
+                    </label>
+                    <div>
+                        <input id="pwLoginBox" type="password" name="password"/> 
+                    </div>
+                </div>
+                <button id="loginButton">Submit</button>
+                {% for message in get_flashed_messages(category_filter = ['error_login_credentials']) %}
+                <div id="alertMessage">
+                    {{message}}
+                </div>
+                {% endfor %}
+            </form>    
+        </div>
+    </div>
+    <script src="static/script.js"></script>
+</body>
+</html>
